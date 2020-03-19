@@ -1,0 +1,55 @@
+﻿@using System.Web.Optimization
+@model eUseControl.Web.Models.UserLogin
+
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    @section PageStyle{
+        @Styles.Render("~/bundles/assets/RegisterForm")
+    }
+
+    <div class="main">
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container">
+                <div class="signin-content">
+                    <div class="signin-image">
+                        <figure><img src="~/assets/RegisterForm/images/1_G8HPbru7Uq8Q3L1d-ub2Dw (1).png" alt="sing up image"></figure>
+                        <a href="@Url.Action("Register","Home")" class="signup-image-link">Create an account</a>
+                    </div>
+                    <div class="signin-form">
+                        <h2 class="form-title">Sign up</h2>
+                        @Html.ValidationSummary(true)
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @id = "login-form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Username, " ", new { @class = "zmdi zmdi-account material-icons-name" })
+                                @Html.TextBoxFor(model => model.Username, new { placeholder = "Username", title = " ", value = " ", name = "username", id = "username" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password, " ", new { @class = "zmdi zmdi-lock" })
+                                @Html.TextBoxFor(model => model.Password, new { type = "password", title = " ", placeholder = "Password", value = " ", name = "password", id = "password" })
+                            </div>
+                            <div class="form-group">
+                                @Html.TextBox("remember-me", " ", new { @class = "agree-term", type = "checkbox" })
+                                <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                            </div>
+                            <div class="form-group form-button">
+                                @Html.TextBox("signin", "Log in", new { @class = "form-submit", type = "submit" })
+                            </div>
+                        }
+                        <div class="social-login">
+                            <span class="social-label">Or login with</span>
+                            <ul class="socials">
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>

@@ -1,0 +1,34 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portland</title>
+
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/assets/css/style")
+    @if (IsSectionDefined("PageStyle"))
+    {
+        @RenderSection("PageStyle")
+    }
+
+
+</head>
+<body>
+
+    <!--Header-->
+    @Html.Partial("_HeaderNavBar")
+
+
+    @RenderBody()
+
+    <!--Footer-->
+    @Html.Partial("_Footer")
+
+
+</body>
+@Scripts.Render("~/bundles/jquery/js")
+@Scripts.Render("~/bundles/bootsrap/js")
+</html>

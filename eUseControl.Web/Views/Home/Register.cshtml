@@ -1,0 +1,57 @@
+﻿@using System.Web.Optimization
+@model eUseControl.Web.Models.UserRegister
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section PageStyle{
+    @Styles.Render("~/bundles/assets/RegisterForm")
+}
+
+
+
+<div class="main">
+
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Sign up</h2>
+                    @Html.ValidationSummary(true)
+                    @using (Html.BeginForm("Signin", "Home", FormMethod.Post, new { @id = "register-form" }))
+                    {
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Username, " ", new { @class = "zmdi zmdi-account material-icons-name" })
+                            @Html.TextBoxFor(model => model.Username, new { placeholder = "Username", title = " ", value = " ", name = "username", id = "username" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Email, " ", new { @class = "zmdi zmdi-email" })
+                            @Html.TextBoxFor(model => model.Email, new { placeholder = "Your Email", title = " ", value = " ", name = "email", id = "email" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Password, " ", new { @class = "zmdi zmdi-lock" })
+                            @Html.TextBoxFor(model => model.Password, new { type = "password", title = " ", placeholder = "Password", value = " ", name = "pass", id = "pass" })
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.RePassword, " ", new { @class = "zmdi zmdi-lock" })
+                            @Html.TextBoxFor(model => model.RePassword, new { type = "password", title = " ", placeholder = "Repeat your password", value = " ", name = "re_pass", id = "re_pass" })
+                        </div>
+                        <div class="form-group">
+                            @Html.TextBox("agree-term", " ", new { @class = "agree-term", type = "checkbox" })
+                            <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                        </div>
+                        <div class="form-group form-button">
+                            @Html.TextBox("signup", "Register", new { @class = "form-submit", type = "submit" })
+                        </div>
+                    }
+                </div>
+                <div class="signup-image">
+                    <figure><img src="~/assets/RegisterForm/images/1_G8HPbru7Uq8Q3L1d-ub2Dw (1).png" alt="sing up image"></figure>
+                    <a href="@Url.Action("Signin","Home")" class="signup-image-link">I am already member</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
