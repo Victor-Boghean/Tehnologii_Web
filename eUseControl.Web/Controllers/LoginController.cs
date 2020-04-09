@@ -38,7 +38,17 @@ namespace eUseControl.Web.Controllers
             {
                 UserRegister user = null;
 
-                using(OnlineStoreEntities db = new OnlineStoreEntities())
+                ULoginData data = new ULoginData
+                {
+                    Username = login.Username,
+                    Password = login.Password,
+                    LoginIp = Request.UserHostAddress,
+                    LoginDateTime = DateTime.Now
+
+                };
+                var userLogin = _session.UserLogin(data);
+
+                using (OnlineStoreEntities db = new OnlineStoreEntities())
                 {
                     user = db.UserRegisters.FirstOrDefault(u => u.Username == login.Username && u.Password == login.Password );
                 }
@@ -49,30 +59,8 @@ namespace eUseControl.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "This user doesn't exixt");
+                    ModelState.AddModelError("", "This user doesn't exist");
                 }
-
-
-               /* ULoginData data = new ULoginData
-                {
-                    Username = login.Username,
-                    Password = login.Password,
-                    LoginIp = Request.UserHostAddress,
-                    LoginDateTime = DateTime.Now
-
-                };
-                
-                var userLogin = _session.UserLogin(data);
-                if(userLogin.Status)
-                {
-                    //add cookie
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", userLogin.StatusMsg);
-                    return View();
-                }*/
             }
             return View(login);
         }
