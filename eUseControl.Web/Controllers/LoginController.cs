@@ -12,7 +12,7 @@ namespace eUseControl.Web.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
+
         private readonly ISession _session;
 
         public LoginController()
@@ -21,21 +21,47 @@ namespace eUseControl.Web.Controllers
             _session = bl.GetSessionBL();
         }
 
+
+        public ActionResult Signin()
+        {
+            UserLogin login = new UserLogin();
+
+            return View(login);
+        }        
+
         //Get: Login
         [HttpPost] //transmiterea datelor client sau a formularului catre server
         [ValidateAntiForgeryToken]//pentru a preveni falsificarea cererilor între site-uri
-        public ActionResult Index(UserLogin login) 
+        public ActionResult Signin(UserLogin login) 
         {
            if(ModelState.IsValid)
             {
-                ULoginData data = new ULoginData
+                UserRegister user = null;
+
+                using(OnlineStoreEntities db = new OnlineStoreEntities())
                 {
-                    Email = login.Email,
+                    user = db.UserRegisters.FirstOrDefault(u => u.Username == login.Username && u.Password == login.Password );
+                }
+
+                if(user != null)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "This user doesn't exixt");
+                }
+
+
+               /* ULoginData data = new ULoginData
+                {
+                    Username = login.Username,
                     Password = login.Password,
                     LoginIp = Request.UserHostAddress,
                     LoginDateTime = DateTime.Now
-                };
 
+                };
+                
                 var userLogin = _session.UserLogin(data);
                 if(userLogin.Status)
                 {
@@ -46,14 +72,9 @@ namespace eUseControl.Web.Controllers
                 {
                     ModelState.AddModelError("", userLogin.StatusMsg);
                     return View();
-                }
+                }*/
             }
-
-            return View();
+            return View(login);
         }
-
-
-
-
     }
 }

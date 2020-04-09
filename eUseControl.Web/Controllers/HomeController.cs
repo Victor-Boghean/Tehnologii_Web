@@ -1,4 +1,5 @@
-﻿using System;
+﻿using eUseControl.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,14 +14,8 @@ namespace eUseControl.Web.Controllers
         {
             return View();
         }
-        public ActionResult Signin()
-        {
-            return View();
-        }
-        public ActionResult Register()
-        {
-            return View();
-        }
+        
+        
 
 
     }

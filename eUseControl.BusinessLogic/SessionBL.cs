@@ -13,9 +13,7 @@ namespace eUseControl.BusinessLogic
     {
         public ULoginResp UserLogin(ULoginData data)
         {
-            return new ULoginResp();    //UserLoginAction(data);
+            return new ULoginResp();    
         }
-
-       
     }
 }

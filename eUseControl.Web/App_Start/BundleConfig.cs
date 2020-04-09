@@ -24,8 +24,13 @@ namespace eUseControl.Web
                 "~/assets/RegisterForm/css/style.css",
                 "~/assets/RegisterForm/scss/style.css",
                 "~/assets/RegisterForm/fonts/material-icon/css/material-design-iconic-font.min.css",
-                "~/assets/RegisterForm/fonts/material-icon/css/material-design-iconic-font.min.css")); 
-
+                "~/assets/RegisterForm/fonts/material-icon/css/material-design-iconic-font.min.css"));
+            
+            //scripturi pentru validarea formei din partea clientului
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval/js").Include(
+                "~/Scripts/jquery-{version}.min.js",
+                "~/Scripts/jquery.validate.min.js",
+                "~/Scripts/jquery.validate.unobtrusive.min.js")); 
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿@using System.Web.Optimization
-@model eUseControl.Web.Models.UserRegister
+
+@model eUseControl.Domain.Entities.User.URegisterData
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -18,23 +19,29 @@
                 <div class="signup-form">
                     <h2 class="form-title">Sign up</h2>
                     @Html.ValidationSummary(true)
-                    @using (Html.BeginForm("Signin", "Home", FormMethod.Post, new { @id = "register-form" }))
+                    @using (Html.BeginForm("Register", "Register", FormMethod.Post, new { @id = "register-form" }))
                     {
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
                         <div class="form-group">
-                            @Html.LabelFor(model => model.Name, " ", new { @class = "zmdi zmdi-account material-icons-name" })
-                            @Html.TextBoxFor(model => model.Name, new { placeholder = "Name", title = " ", value = " ", name = "username", id = "username" })
+                            @Html.LabelFor(model => model.Username, " ", new { @class = "zmdi zmdi-account material-icons-name" })
+                            @Html.TextBoxFor(model => model.Username, new { placeholder = "Username", title = " ", value = " ", name = "username", id = "username" })
+                            @Html.ValidationMessageFor(model => model.Username)
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(model => model.Email, " ", new { @class = "zmdi zmdi-email" })
                             @Html.TextBoxFor(model => model.Email, new { placeholder = "Your Email", title = " ", value = " ", name = "email", id = "email" })
+                            @Html.ValidationMessageFor(model => model.Email)
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(model => model.Password, " ", new { @class = "zmdi zmdi-lock" })
                             @Html.TextBoxFor(model => model.Password, new { type = "password", title = " ", placeholder = "Password", value = " ", name = "pass", id = "pass" })
+                            @Html.ValidationMessageFor(model => model.Password)
                         </div>
                         <div class="form-group">
-                            @Html.LabelFor(model => model.RePassword, " ", new { @class = "zmdi zmdi-lock" })
-                            @Html.TextBoxFor(model => model.RePassword, new { type = "password", title = " ", placeholder = "Repeat your password", value = " ", name = "re_pass", id = "re_pass" })
+                            @Html.LabelFor(model => model.ConfirmPassword, " ", new { @class = "zmdi zmdi-lock" })
+                            @Html.TextBoxFor(model => model.ConfirmPassword, new { type = "password", title = " ", placeholder = "Repeat your password", value = " ", name = "re_pass", id = "re_pass" })
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword)
                         </div>
                         <div class="form-group">
                             @Html.TextBox("agree-term", " ", new { @class = "agree-term", type = "checkbox" })
@@ -52,6 +59,6 @@
             </div>
         </div>
     </section>
-
+    @Html.ViewData["Message"]
 </div>
 

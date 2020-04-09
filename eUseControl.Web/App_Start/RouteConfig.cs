@@ -21,12 +21,12 @@ namespace eUseControl.Web
             routes.MapRoute(
                 name: "Signin",
                 url: "{controller}/{action}",
-                defaults: new { controller = "Home", action = "Signin" }
+                defaults: new { controller = "Login", action = "Signin" }
             );
             routes.MapRoute(
                 name: "Register",
                 url: "{controller}/{action}",
-                defaults: new { controller = "Home", action = "Register" }
+                defaults: new { controller = "Register", action = "Register" }
             );
         }
     }
