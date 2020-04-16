@@ -46,6 +46,7 @@
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\ULoginResp.cs" />
     <Compile Include="Entities\User\URegisterData.cs" />
+    <Compile Include="Entities\User\URegisterResp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

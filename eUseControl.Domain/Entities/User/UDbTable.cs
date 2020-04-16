@@ -31,10 +31,14 @@ namespace eUseControl.Domain.Entities.User
         [StringLength(30)]
         public string Email { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime LastLogin { get; set; }
+        [DataType(DataType.DateTime)]
+        public Nullable<DateTime> LastLogin { get; set; }
 
         [StringLength(30)]
         public string LasIp { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public Nullable<DateTime> RegisterDate { get; set; }
+
     }
 }

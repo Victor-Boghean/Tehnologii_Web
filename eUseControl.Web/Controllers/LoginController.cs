@@ -24,20 +24,16 @@ namespace eUseControl.Web.Controllers
 
         public ActionResult Signin()
         {
-            UserLogin login = new UserLogin();
-
-            return View(login);
-        }        
+            return View("Signin");
+        }
 
         //Get: Login
         [HttpPost] //transmiterea datelor client sau a formularului catre server
         [ValidateAntiForgeryToken]//pentru a preveni falsificarea cererilor între site-uri
-        public ActionResult Signin(UserLogin login) 
+        public ActionResult Signin(UserLogin login)
         {
-           if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                UserRegister user = null;
-
                 ULoginData data = new ULoginData
                 {
                     Username = login.Username,
@@ -47,22 +43,19 @@ namespace eUseControl.Web.Controllers
 
                 };
                 var userLogin = _session.UserLogin(data);
-
-                using (OnlineStoreEntities db = new OnlineStoreEntities())
-                {
-                    user = db.UserRegisters.FirstOrDefault(u => u.Username == login.Username && u.Password == login.Password );
-                }
-
-                if(user != null)
+                if (userLogin.Status)
                 {
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "This user doesn't exist");
+                    ModelState.AddModelError("", userLogin.StatusMsg);
+                    return View("Signin");
                 }
+
+
             }
-            return View(login);
+            return View("Signin");
         }
     }
 }

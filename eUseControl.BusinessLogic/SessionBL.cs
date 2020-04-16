@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 
 namespace eUseControl.BusinessLogic
 {
-    public class SessionBL : UserApi, ISession 
+    public class SessionBL : UserApi, ISession
     {
         public ULoginResp UserLogin(ULoginData data)
         {
-            return new ULoginResp();    
+            return ULoginAction(data);
+        }
+        public URegisterResp UserRegister(URegisterData data)
+        {
+            return URegisterAction(data);
         }
     }
 }
