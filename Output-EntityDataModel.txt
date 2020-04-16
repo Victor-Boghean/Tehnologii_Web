@@ -1,4 +1,0 @@
-﻿Generated model file: DbModel.edmx.
-Loading metadata from the database took 00:00:01.3836728.
-Generating the model took 00:00:02.8259768.
-Added the connection string to the Web.Config file.
