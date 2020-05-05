@@ -36,7 +36,7 @@ namespace eUseControl.Web.Controllers
             {
                 ULoginData data = new ULoginData
                 {
-                    Username = login.Username,
+                    Email = login.Email,
                     Password = login.Password,
                     LoginIp = Request.UserHostAddress,
                     LoginDateTime = DateTime.Now
@@ -45,6 +45,9 @@ namespace eUseControl.Web.Controllers
                 var userLogin = _session.UserLogin(data);
                 if (userLogin.Status)
                 {
+                    HttpCookie cookie = _session.GenCookie(login.Email);
+                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 else

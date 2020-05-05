@@ -42,16 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Enums\URole.cs" />
+    <Compile Include="Entities\Product\PEditData.cs" />
+    <Compile Include="Entities\Product\PEditResp.cs" />
+    <Compile Include="Entities\Product\PRegisterResp.cs" />
+    <Compile Include="Entities\Product\PRegisterData.cs" />
+    <Compile Include="Entities\Product\ProductDbTable.cs" />
+    <Compile Include="Entities\User\Session.cs" />
     <Compile Include="Entities\User\UDbTable.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\ULoginResp.cs" />
     <Compile Include="Entities\User\URegisterData.cs" />
     <Compile Include="Entities\User\URegisterResp.cs" />
+    <Compile Include="Entities\User\UserMinimal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\eUseControl.Helpers\eUseControl.Helpers.csproj">
       <Project>{743839ae-3a9e-49ca-be05-d2116678532b}</Project>

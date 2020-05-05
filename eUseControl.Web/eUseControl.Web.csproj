@@ -55,9 +55,29 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.14.0.17971, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.14.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -111,6 +131,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\ProductStyle.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\img\102078492_images_12836047734.jpg" />
     <Content Include="assets\img\1_G8HPbru7Uq8Q3L1d-ub2Dw.png" />
@@ -121,6 +142,9 @@
     <Content Include="assets\img\casc.png" />
     <Content Include="assets\img\clip.png" />
     <Content Include="assets\img\clock.png" />
+    <Content Include="assets\img\dell-front.png" />
+    <Content Include="assets\img\dell-left.png" />
+    <Content Include="assets\img\dell-uper.png" />
     <Content Include="assets\img\elctronic-clock.png" />
     <Content Include="assets\img\footer-img.png" />
     <Content Include="assets\img\herobanner2_tcm245_2208354_tcm245_2208382_tcm245-2208354.jpg" />
@@ -153,6 +177,7 @@
     <Content Include="assets\img\Webp.net-resizeimage.jpg" />
     <Content Include="assets\img\xps.jpg" />
     <Content Include="assets\img\Zendure_4-Port_USB.png" />
+    <Content Include="assets\js\function.js" />
     <Content Include="assets\logo\19-layers.png" />
     <Content Include="assets\logo\2-layers.svg" />
     <Content Include="assets\logo\4-layers.png" />
@@ -273,6 +298,9 @@
     <Content Include="img\casc.png" />
     <Content Include="img\clip.png" />
     <Content Include="img\clock.png" />
+    <Content Include="img\dell-front.png" />
+    <Content Include="img\dell-left.png" />
+    <Content Include="img\dell-uper.png" />
     <Content Include="img\elctronic-clock.png" />
     <Content Include="img\footer-img.png" />
     <Content Include="img\herobanner2_tcm245_2208354_tcm245_2208382_tcm245-2208354.jpg" />
@@ -447,6 +475,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Scripts\jquery-3.5.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.0.js" />
     <Content Include="Scripts\jquery-3.5.0.min.js" />
     <Content Include="Scripts\jquery-3.5.0.slim.js" />
@@ -538,13 +567,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CustAccessFilter.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProdusController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Extension\HttpContextExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductEdit.cs" />
     <Compile Include="Models\UserLogin.cs" />
     <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -567,6 +603,8 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />
     <Content Include="Views\Login\Signin.cshtml" />
+    <Content Include="Views\Produs\UserProducts.cshtml" />
+    <Content Include="Views\Produs\AdminProducts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -579,6 +617,9 @@
     <Folder Include="assets\fonts\" />
     <Folder Include="assets\icons\" />
     <Folder Include="Entities\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Base\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

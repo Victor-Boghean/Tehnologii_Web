@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.container {
+    margin-bottom: 0;
+    cursor: unset;
+}
+
+
+
+.product-view {
+    background-color: #E4E5E7;
+    cursor: unset;
+}
+
+.style-box{
+    background-color: #fff;
+    margin: 20px 0 15px 0;
+    border-radius: 10px;
+}
+
+.left-box{
+    height: 450px;
+}
+
+
+.right-box{
+    height: 100px;
+}
+
+.price-box{
+    height: 330px;
+    position: relative;
+}
+
+.view-carousel{
+    display: flex;
+}    
+
+.carousel  {
+    padding-top: 10%;
+    margin-left: 8%;
+    margin-right: 3%;
+    height: 450px;
+    width: 450px;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
+
+.product-name{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    color: black;
+    text-decoration: none;
+    padding-top: 5px;
+    padding-left: 15px;
+    position:absolute;
+}
+
+.descriptiona {
+    padding: 10px 15px 0 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+.descriptionu {
+    padding: 46px 15px 0 15px;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+.btn {
+    font-family: unset;
+    font-size: 15px;
+    font-weight: unset;
+    color: black;
+    width: 200px;
+    height: 50px;
+    margin: 15px 15px 5px 30px;
+}
+
+.btn-warning{
+    margin-top: 100px
+}
+
+.price{
+    position: absolute;
+    padding: 35px 0px 20px 50px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 35px;
+    color: #dd3721;
+    text-decoration: none;
+}
+
+.option{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 100px;
+}
+
+.v2{
+    margin-top: 30px
+}
+
+.div-price{
+        position: absolute;
+}
+
+.div-garant{
+    margin-left: 50%;
+}
+
+.modify {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    padding: 15px 10px 0px 260px;
+    color: #dd3721;
+    cursor: pointer;
+}
+
+.modify1 {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    position: absolute;
+    margin: 50px 0px 0px 226px;
+    color: #dd3721;
+    cursor: pointer;
+}
+
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+    position: absolute;
+    margin: 50px 0px 0px 226px;
+}

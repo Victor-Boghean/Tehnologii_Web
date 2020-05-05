@@ -2,43 +2,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div class="sub-nav">
-        <nav class="navbar snavbar navbar-light navbar-expand-lg justify-content-start">
-            <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
-                <ul class="navbar-nav sec-navbar mx-auto text-lg-center text-left">
-                    <li class="key-item">
-                        <a class="key-link" href="#">Top Sales</a>
-                    </li>
-                    <li class="key-item">
-                        <a class="key-link" href="#">Brand Focus</a>
-                    </li>
-                    <li class="key-item">
-                        <a class="key-link" href="#">Hi-Tech</a>
-                    </li>
-                    <li class="key-item">
-                        <a class="key-link" href="#">Best Sellers</a>
-                    </li>
-                    <li class="key-item">
-                        <a class="key-link" href="#">Projects</a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav sec-navbar mx-auto text-lg-center text-left">
-                    <li class="key-item">
-                        <a class="key-link" href="#">Support</a>
-                    </li>
-                    <li class="key-item">
-                        <a class="key-link" href="#">
-                            <img class="search-icn" src="logo/Search_Icon.svg" alt="search-icon">
-                        </a>
-                    </li>
-                    <li class="key-item">
-                        <a class="key-link search-right-bar" href="#">I'm looking for ...</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -428,8 +392,8 @@
                     </div>
                     <div class="proprietes">
                         <ul class="list-terms">
-                            <li class="produs-name">
-                                Dell XPS 13 9380 13.3"
+                            <li class="produs-name"> 
+                                <a href="@Url.Action("UserProducts", "Produs")">Dell XPS 13 9380 13.3"</a>
                             </li>
                             <li class="produs-color">black</li>
                             <li class="produs-price">$1679.00</li>

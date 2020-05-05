@@ -28,6 +28,16 @@ namespace eUseControl.Web
                 url: "{controller}/{action}",
                 defaults: new { controller = "Register", action = "Register" }
             );
+            routes.MapRoute(
+                name: "AdminProducts",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Produs", action = "AdminProducts" }
+            );
+            routes.MapRoute(
+                name: "UserProducts",
+                url: "{controller}/{action}",
+                defaults: new { controller = "Produs", action = "UserProducts" }
+            );
         }
     }
 }

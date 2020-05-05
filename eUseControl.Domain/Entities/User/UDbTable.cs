@@ -37,6 +37,9 @@ namespace eUseControl.Domain.Entities.User
         [StringLength(30)]
         public string LasIp { get; set; }
 
+        [StringLength(30)]
+        public string Level { get; set; }
+
         [DataType(DataType.DateTime)]
         public Nullable<DateTime> RegisterDate { get; set; }
 

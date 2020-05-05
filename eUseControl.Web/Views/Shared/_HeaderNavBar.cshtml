@@ -1,6 +1,6 @@
 ﻿@using System.Web.Optimization
 
-
+@model eUseControl.Domain.Entities.Product.ProductDbTable
 <nav class="navbar navbar-light navbar-expand-lg justify-content-start">
     <a class="nav-link" href="#">
         <img src="@Url.Content("~/assets/logo/Menu_Icon.svg")" alt="menu">
@@ -43,8 +43,45 @@
                 <a class="nav-link circle-cart" href="#">0</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link sign" href="@Url.Action("Signin","Login")">Sign In</a>
+                <a class="nav-link sign" href="@Url.Action("Signin","Login")">Signin</a>
             </li>
         </ul>
     </div>
 </nav>
+<div class="sub-nav">
+    <nav class="navbar snavbar navbar-light navbar-expand-lg justify-content-start">
+        <div class="navbar-collapse collapse justify-content-between align-items-center w-100" id="collapsingNavbar2">
+            <ul class="navbar-nav sec-navbar mx-auto text-lg-center text-left">
+                <li class="key-item">
+                    <a class="key-link" href="#">Top Sales</a>
+                </li>
+                <li class="key-item">
+                    <a class="key-link" href="#">Brand Focus</a>
+                </li>
+                <li class="key-item">
+                    <a class="key-link" href="#">Hi-Tech</a>
+                </li>
+                <li class="key-item">
+                    <a class="key-link" href="#">Best Sellers</a>
+                </li>
+                <li class="key-item">
+                    <a class="key-link" href="#">Projects</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav sec-navbar mx-auto text-lg-center text-left">
+                <li class="key-item">
+                    <a class="key-link" href="#">Support</a>
+                </li>
+                <li class="key-item">
+                    <a class="key-link" href="#">
+                        <img class="search-icn" src="@Url.Content("~/assets/logo/Search_Icon.svg")" alt="search-icon">
+                    </a>
+                </li>
+                <li class="key-item">
+                    <a class="key-link search-right-bar" href="#">I'm looking for ...</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
