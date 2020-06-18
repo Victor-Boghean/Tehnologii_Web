@@ -38,6 +38,11 @@ namespace eUseControl.Web
                 url: "{controller}/{action}",
                 defaults: new { controller = "Produs", action = "UserProducts" }
             );
+            routes.MapRoute(
+            name: "Cart",
+            url: "{controller}/{action}",
+            defaults: new { controller = "Cart", action = "AddToCart" }
+            );
         }
     }
 }

@@ -22,6 +22,7 @@ namespace eUseControl.Web
             bundles.Add(new StyleBundle("~/bundles/assets/css/style").Include("~/assets/css/style.css", new CssRewriteUrlTransform()));
 
             bundles.Add(new StyleBundle("~/bundles/css/ProductStyle").Include("~/assets/css/ProductStyle.css", new CssRewriteUrlTransform()));
+            bundles.Add(new StyleBundle("~/bundles/css/CartStyle").Include("~/assets/css/CartStyle.css", new CssRewriteUrlTransform()));
 
             //stiluri pentru register-form   
             bundles.Add(new StyleBundle("~/bundles/assets/RegisterForm").Include(

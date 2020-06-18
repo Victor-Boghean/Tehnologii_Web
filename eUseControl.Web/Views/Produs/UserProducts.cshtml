@@ -53,25 +53,27 @@
                 <div class="right-box style-box price-box">
                     <div class="row">
                         @Html.ValidationSummary(true)
-                        @using (Html.BeginForm("ProductsEdit", "Produs", FormMethod.Post, new { @id = "EditPrice" }))
-                        {
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            <div class="col-md-6 w-50 div-price">
-                                <div class="price">@Html.DisplayFor(model => model.Price) lei</div>
+                        <!--using (Html.BeginForm("ProductsEdit", "Produs", FormMethod.Post, new { id = "EditPrice" }))
+    {-->
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="col-md-6 w-50 div-price">
+                            <div class="price">@Html.DisplayFor(model => model.Price) lei</div>
 
-                                <button type="button" class="btn btn-warning">
-                                    <i class="fa fa-hand-o-right"></i> Comandă imediat
-                                </button>
-
-                                <button type="button" class="btn btn-outline-primary">
+                            <button type="button" class="btn btn-warning">
+                                <i class="fa fa-hand-o-right"></i> Comandă imediat
+                            </button>
+                            @using (Html.BeginForm("AddToCart", "Cart", new { productId = Model.Id }, FormMethod.Post))
+                            {
+                                <button type="submit" class="btn btn-outline-primary">
                                     <i class="fa fa-cart-arrow-down"></i> Adaugă în Coș
                                 </button>
+                            }
 
-                                <button type="button" class="btn btn-outline-primary">
-                                    <i class=" fa fa-clock-o"></i> Cumpără în Rate
-                                </button>
-                            </div>
-                        }
+                            <button type="button" class="btn btn-outline-primary">
+                                <i class=" fa fa-clock-o"></i> Cumpără în Rate
+                            </button>
+                        </div>
+                        <!--}-->
                         <div class="col-md-6 div-garant">
                             <div class="option">
                                 <i class="fa fa-calendar-check-o"></i>  Garanție inclusă
