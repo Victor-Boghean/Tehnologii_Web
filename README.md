@@ -4,4 +4,4 @@ Functioneaza logarea si inregistrarea.
 La inregistrare, datele se adauga in baza de date. Folosesc SQL Server2019.
 La autentificare se verifica daca datele de logare sunt valide (verifica datele introduse daca sunt in baza de date)
 
-123
+123 123
